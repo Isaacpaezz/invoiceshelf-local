@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  invoiceshelf:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - TZ=UTC
+      - PUID=1000
+      - PGID=1000
+    restart: unless-stopped
